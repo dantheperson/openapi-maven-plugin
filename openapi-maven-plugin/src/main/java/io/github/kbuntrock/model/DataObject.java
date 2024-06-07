@@ -170,8 +170,9 @@ public class DataObject {
 				// Anything simplier ...
 				javaClass = (Class<?>) type;
 			} else {
-				throw new RuntimeException(
-					"Type " + originalType.getTypeName() + " (+" + originalType.getClass().getSimpleName() + ") is not supported yet.");
+				javaClass = Object.class;
+				//throw new RuntimeException(
+				//	"Type " + originalType.getTypeName() + " (+" + originalType.getClass().getSimpleName() + ") is not supported yet.");
 			}
 
 			this.openApiResolvedType = OpenApiTypeResolver.INSTANCE.resolveFromJavaClass(javaClass);
